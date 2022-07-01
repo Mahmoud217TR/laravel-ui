@@ -14,7 +14,7 @@ class Bootstrap extends Preset
     public static function install()
     {
         static::updatePackages();
-        static::updateWebpackConfiguration();
+        static::updateViteConfiguration();
         static::updateSass();
         static::updateBootstrapping();
         static::removeNodeModules();
@@ -37,13 +37,13 @@ class Bootstrap extends Preset
     }
 
     /**
-     * Update the Webpack configuration.
+     * Update the Vite configuration.
      *
      * @return void
      */
-    protected static function updateWebpackConfiguration()
+    protected static function updateViteConfiguration()
     {
-        copy(__DIR__.'/bootstrap-stubs/webpack.mix.js', base_path('webpack.mix.js'));
+        copy(__DIR__.'/bootstrap-stubs/vite.config.js', base_path('vite.config.js'));
     }
 
     /**
